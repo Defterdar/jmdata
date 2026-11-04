@@ -7,7 +7,8 @@
 <meta name="description" content="JM Data, Ikast ApS - Store it løsninger til små penge">
 <link rel="icon" href="../assets/2018/10/favicon.ico">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
-<link rel="stylesheet" href="../assets/style.css?v=4">
+<link rel="stylesheet" href="../assets/style.css?v=5">
+<script src="../assets/mobile-menu.js?v=1" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -20,7 +21,8 @@
         <a href="https://backup.jmdata.dk/" title="JM Data Online Backup" target="_blank"><img src="../assets/images/backup.png" width="18" height="18" alt="JM Data Online Backup"></a>
         <a href="https://cloud.jmdata.dk/RDWeb/WebClient/" title="JM Data Remote Desktop" target="_blank"><img src="../assets/images/desktop.png" width="18" height="18" alt="JM Data Remote Desktop"></a>
       </div>
-      <nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-icon" aria-hidden="true"></span><span>Menu</span></button>
+      <nav id="primary-nav">
         <ul>
           <li><a href="../produkter/">Produkter <i class="chev"></i></a><ul><li><a href="../produkter/dynamics-365-business-central/">Dynamics 365 Business Central</a></li><li><a href="../produkter/microsoft-365/">Microsoft 365</a></li><li><a href="../produkter/microsoft-azure/">Microsoft Azure</a></li><li><a href="../produkter/online-backup/">Online Backup</a></li><li><a href="../produkter/hosted-webhotel/">Hosted Webhotel</a></li></ul></li>
           <li><a href="../artikler/">Artikler</a></li>

@@ -25,6 +25,14 @@ nav li:hover > ul, nav li:focus-within > ul { display: block; }
 nav li ul a { color: #fff; margin: 0; padding: 8px 18px; border-radius: 0; font-weight: 600; }
 nav li ul a:hover { background: rgba(255, 255, 255, .12); }
 .chev { display: inline-block; width: 5px; height: 5px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); margin: 0 0 3px 4px; }
+.menu-toggle { display: none; align-items: center; gap: 10px; border: 0; padding: 8px; background: transparent; color: var(--navy); font: inherit; font-size: 12px; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+.menu-icon { position: relative; display: block; width: 20px; height: 2px; background: currentColor; }
+.menu-icon::before, .menu-icon::after { position: absolute; left: 0; width: 20px; height: 2px; background: currentColor; content: ""; }
+.menu-icon::before { top: -6px; }
+.menu-icon::after { top: 6px; }
+.menu-toggle[aria-expanded="true"] .menu-icon { background: transparent; }
+.menu-toggle[aria-expanded="true"] .menu-icon::before { top: 0; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-icon::after { top: 0; transform: rotate(-45deg); }
 
 /* hero (home) */
 .hero { position: relative; height: 360px; background: #000; line-height: 0; overflow: hidden; }
@@ -79,9 +87,15 @@ td, th { border: 1px solid #ddd; padding: 4px 8px; }
 
 @media (max-width: 800px) {
   .sidebar { flex-basis: 100%; }
-  .head-right { align-items: flex-start; }
+  .head-right { width: 100%; align-items: flex-start; }
+  .menu-toggle { display: flex; }
+  body.menu-ready #primary-nav { display: none; }
+  body.menu-ready #primary-nav.is-open { display: block; }
+  nav > ul { flex-direction: column; align-items: stretch; gap: 2px; }
+  nav a { padding: 8px; }
   .col-md-3, .col-md-4, .col-md-6, .col-md-1-5 { width: 100%; }
-  nav li ul { position: static; display: block; background: none; }
+  nav li ul { position: static; min-width: 0; background: none; }
+  nav li:hover > ul, nav li:focus-within > ul { display: block; }
   nav li ul a { color: var(--navy); }
   .page-top h1 { font-size: 24px; }
 }
